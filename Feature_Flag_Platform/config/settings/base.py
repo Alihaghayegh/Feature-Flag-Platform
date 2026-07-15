@@ -1,6 +1,8 @@
 from pathlib import Path
 import environ
 
+import Feature_Flag_Platform.apps
+
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 env = environ.Env()
@@ -40,7 +42,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
 
-    # "Feature_Flag_Platform.apps.accounts",
+    "Feature_Flag_Platform.apps.accounts.apps.AccountsConfigq",
 
     # "Feature_Flag_Platform.apps.features.apps.FeaturesConfig",
 
