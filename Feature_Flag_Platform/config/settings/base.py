@@ -42,7 +42,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
 
-    "Feature_Flag_Platform.apps.accounts.apps.AccountsConfigq",
+    "Feature_Flag_Platform.apps.accounts.apps.AccountsConfig",
 
     # "Feature_Flag_Platform.apps.features.apps.FeaturesConfig",
 
@@ -144,6 +144,7 @@ DATABASES = {
 }
 
 # ------------------------------------------------
+AUTH_USER_MODEL = "accounts.User"
 
 AUTH_PASSWORD_VALIDATORS = [
 

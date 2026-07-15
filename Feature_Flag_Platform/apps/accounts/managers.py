@@ -1,8 +1,12 @@
 from django.contrib.auth.base_user import BaseUserManager
 
+'''
+    This class manages all user creation and super user creation using django 
+    Base user manager and its methods for email and password
+'''
 
 class UserManager(BaseUserManager):
-
+    # Creating normal user
     def create_user(self, email, password=None, **extra_fields):
 
         if not email:
@@ -20,7 +24,7 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
 
         return user
-
+    # creating superuser
     def create_superuser(self, email, password=None, **extra_fields):
 
         extra_fields.setdefault("is_staff", True)
