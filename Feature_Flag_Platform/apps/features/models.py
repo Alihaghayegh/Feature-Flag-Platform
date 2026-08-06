@@ -145,3 +145,21 @@ class FeatureTarget(models.Model):
         default=True
 
     )
+
+
+class FeatureSchedule(models.Model):
+
+    feature = models.OneToOneField(
+
+        Feature,
+
+        on_delete=models.CASCADE
+
+    )
+
+    start_at = models.DateTimeField()
+
+    end_at = models.DateTimeField(
+        null=True,
+        blank=True
+    )
