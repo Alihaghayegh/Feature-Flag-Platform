@@ -2,6 +2,10 @@ import uuid
 
 from django.db import models
 
+from .choices import (
+    RuleType,
+    Operator
+)
 
 class Feature(models.Model):
 
@@ -55,3 +59,64 @@ class Feature(models.Model):
     def __str__(self):
 
         return self.key
+
+
+class FeatureRule(models.Model):
+
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False
+    )
+
+    feature = models.ForeignKey(
+
+        Feature,
+
+        on_delete=models.CASCADE,
+
+        related_name="rules"
+
+    )
+
+    rule_type = models.CharField(
+
+        max_length=30,
+
+        choices=RuleType.choices
+
+    )
+
+    operator = models.CharField(
+
+        max_length=10,
+
+        choices=Operator.choices
+
+    )
+
+    value = models.CharField(
+
+        max_length=200
+
+    )
+
+    priority = models.PositiveIntegerField(
+
+        default=1
+
+    )
+
+    created_at = models.DateTimeField(
+
+        auto_now_add=True
+
+    )
+
+    class Meta:
+
+        ordering = [
+
+            "priority"
+
+        ]
