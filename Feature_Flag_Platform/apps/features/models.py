@@ -120,3 +120,28 @@ class FeatureRule(models.Model):
             "priority"
 
         ]
+
+
+class FeatureTarget(models.Model):
+
+    feature = models.ForeignKey(
+
+        Feature,
+
+        on_delete=models.CASCADE
+
+    )
+
+    user = models.ForeignKey(
+
+        "accounts.User",
+
+        on_delete=models.CASCADE
+
+    )
+
+    enabled = models.BooleanField(
+
+        default=True
+
+    )
