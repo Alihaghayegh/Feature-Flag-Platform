@@ -44,7 +44,7 @@ LOCAL_APPS = [
 
     "Feature_Flag_Platform.apps.accounts.apps.AccountsConfig",
 
-    # "Feature_Flag_Platform.apps.features.apps.FeaturesConfig",
+    "Feature_Flag_Platform.apps.features.apps.FeaturesConfig",
 
     # "Feature_Flag_Platform.apps.audit",
 
@@ -117,9 +117,11 @@ TEMPLATES = [
 
 # ------------------------------------------------
 
-WSGI_APPLICATION = "config.wsgi.application"
+ROOT_URLCONF = "Feature_Flag_Platform.config.urls"
 
-ASGI_APPLICATION = "config.asgi.application"
+WSGI_APPLICATION = "Feature_Flag_Platform.config.wsgi.application"
+
+ASGI_APPLICATION = "Feature_Flag_Platform.config.asgi.application"
 
 # ------------------------------------------------
 
