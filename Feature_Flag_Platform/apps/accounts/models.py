@@ -12,7 +12,6 @@ class User(
     AbstractBaseUser,
     PermissionsMixin
 ):
-
     email = models.EmailField(
         unique=True
     )
@@ -57,5 +56,4 @@ class User(
     REQUIRED_FIELDS = []
 
     def __str__(self):
-
         return self.email
